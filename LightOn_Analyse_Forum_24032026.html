@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LightOn ALTAI — Analyse Forum 24/03/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#04060f;--surface:#080c18;--surface2:#0d1226;--border:#131a30;--accent:#818cf8;--green:#34d399;--blue:#38bdf8;--warn:#fbbf24;--danger:#f87171;--orange:#fb923c;--purple:#c084fc;--teal:#2dd4bf;--text:#b8bde0;--heading:#eef0ff;--muted:#1e2448}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif;font-size:14.5px;line-height:1.7;padding:28px 18px 60px}
+.wrap{max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#040814,#060a1e);border:1px solid var(--border);border-top:3px solid var(--orange);border-radius:14px;padding:26px 28px 22px;margin-bottom:24px;position:relative;overflow:hidden}
+.hero::before{content:'🧠';position:absolute;right:28px;top:50%;transform:translateY(-50%);font-size:80px;opacity:.07;pointer-events:none}
+.badge{display:inline-flex;align-items:center;background:rgba(251,146,60,.1);border:1px solid rgba(251,146,60,.28);border-radius:20px;padding:4px 14px;font-size:11px;font-weight:700;color:var(--orange);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:22px;font-weight:900;color:var(--heading);line-height:1.25;margin-bottom:10px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:#8892c0}
+.alert{border-radius:12px;padding:16px 20px;margin-bottom:14px}
+.ag{background:rgba(52,211,153,.07);border:1px solid rgba(52,211,153,.28)}
+.ag .at{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:8px}
+.ag p{color:#a7f3d0;font-size:13.5px;margin-bottom:5px}
+.aw{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.28)}
+.aw .at{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--warn);margin-bottom:8px}
+.aw p{color:#fde68a;font-size:13.5px;margin-bottom:5px}
+.ao{background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.28)}
+.ao .at{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+.ao p{color:#fed7aa;font-size:13.5px;margin-bottom:5px}
+.ar{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.28)}
+.ar .at{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--danger);margin-bottom:8px}
+.ar p{color:#fecaca;font-size:13.5px;margin-bottom:5px}
+.alert p:last-child{margin-bottom:0}
+strong{color:var(--heading);font-weight:700}
+.slbl{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.slbl::after{content:'';flex:1;height:1px;background:var(--border)}
+.kg{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:10px;margin-bottom:28px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.kl{font-size:10.5px;color:#8892c0;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.kv{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:600;color:var(--heading);margin-bottom:3px}
+.kd{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700}
+.kd.up{color:var(--green)}.kd.warn{color:var(--warn)}.kd.bl{color:var(--blue)}.kd.red{color:var(--danger)}.kd.p{color:var(--accent)}.kd.t{color:var(--teal)}.kd.o{color:var(--orange)}
+.ks{font-size:10.5px;color:#7c85b0;margin-top:2px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-bottom:12px}
+.card h3{font-size:14.5px;font-weight:700;color:var(--heading);margin-bottom:11px;display:flex;align-items:center;gap:9px}
+.ic{width:26px;height:26px;border-radius:6px;background:rgba(251,146,60,.12);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.card p{color:#6872a8;margin-bottom:9px;font-size:14px}
+.card p:last-child{margin-bottom:0}
+.hl{color:var(--green);font-weight:600}.hlb{color:var(--blue);font-weight:600}.hlw{color:var(--warn);font-weight:600}.hlr{color:var(--danger);font-weight:600}.hlp{color:var(--accent);font-weight:600}.hlo{color:var(--orange);font-weight:600}.hlt{color:var(--teal);font-weight:600}
+.dt{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0}
+.dt th{text-align:left;padding:8px 10px;background:var(--surface2);color:#8892c0;font-size:10.5px;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.dt td{padding:8px 10px;border-bottom:1px solid var(--border);color:#6872a8}
+.dt tr:last-child td{border-bottom:none}
+.dt td:first-child{color:var(--heading);font-weight:600}
+.dt td.g{color:var(--green);font-family:'JetBrains Mono',monospace;font-weight:700}
+.dt td.b{color:var(--blue);font-family:'JetBrains Mono',monospace;font-weight:700}
+.dt td.w{color:var(--warn);font-family:'JetBrains Mono',monospace;font-weight:700}
+.dt td.r{color:var(--danger);font-family:'JetBrains Mono',monospace;font-weight:700}
+.dt td.o{color:var(--orange);font-family:'JetBrains Mono',monospace;font-weight:700}
+.dt td.t{color:var(--teal);font-family:'JetBrains Mono',monospace;font-weight:700}
+.ul{list-style:none;padding:0}
+.ul li{padding:4px 0 4px 20px;position:relative;color:#6872a8;font-size:14px}
+.ul li::before{content:'→';position:absolute;left:0;color:var(--orange);font-weight:700}
+.ul li.risk::before{content:'⚠';color:var(--danger);font-size:11px;top:6px}
+.ul li.neu::before{content:'◆';color:var(--blue);font-size:9px;top:7px}
+.tl{position:relative;padding-left:20px}
+.tl::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--border)}
+.tli{position:relative;padding-bottom:16px}
+.tli:last-child{padding-bottom:0}
+.tld{position:absolute;left:-18px;top:5px;width:10px;height:10px;border-radius:50%;border:2px solid var(--orange);background:var(--bg)}
+.tld.g{border-color:var(--green)}.tld.w{border-color:var(--warn)}.tld.b{border-color:var(--blue)}.tld.r{border-color:var(--danger)}
+.tldate{font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--orange);font-weight:600;margin-bottom:2px}
+.tllbl{font-size:13.5px;color:var(--heading);font-weight:600}
+.tldesc{font-size:12.5px;color:#7c85b0;margin-top:2px}
+.frow{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border)}
+.frow:last-child{border-bottom:none}
+.flvl{font-family:'JetBrains Mono',monospace;font-size:11px;color:#8892c0;width:90px}
+.fprice{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;color:var(--heading);width:72px}
+.fbar{flex:1;height:4px;background:var(--surface2);border-radius:2px;overflow:hidden}
+.fbar-fill{height:100%;border-radius:2px}
+.ftag{width:130px;text-align:right}
+.tag{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700}
+.tg{background:rgba(52,211,153,.12);color:var(--green)}
+.tb{background:rgba(56,189,248,.12);color:var(--blue)}
+.tw{background:rgba(251,191,36,.12);color:var(--warn)}
+.tr{background:rgba(248,113,113,.12);color:var(--danger)}
+.tp{background:rgba(129,140,248,.12);color:var(--accent)}
+.tt{background:rgba(45,212,191,.12);color:var(--teal)}
+.to{background:rgba(251,146,60,.12);color:var(--orange)}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+@media(max-width:600px){.pg{grid-template-columns:1fr}}
+.pc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px}
+.pc .hz{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.pc h4{font-size:13px;color:var(--heading);margin-bottom:6px}
+.pc ul{list-style:none;padding:0}
+.pc ul li{font-size:12.5px;color:#94a3b8;padding:3px 0 3px 12px;position:relative}
+.pc ul li::before{content:'·';position:absolute;left:0;font-weight:900;font-size:16px;top:-1px}
+.verdict{background:linear-gradient(135deg,rgba(251,146,60,.05),rgba(52,211,153,.03));border:1px solid rgba(251,146,60,.2);border-radius:12px;padding:22px}
+.verdict .vt{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.verdict p{color:#6872a8;margin-bottom:9px;font-size:14px}
+.verdict p:last-child{margin-bottom:0}
+.conclu{font-size:14.5px;font-weight:600;color:var(--heading);border-top:1px solid var(--border);padding-top:13px;margin-top:13px}
+.gap{height:26px}
+.pill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:11px;font-weight:700;margin-left:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <div class="badge">🧠 Analyse Forum · ALTAI · Euronext Growth · PEA-PME · 24/03/2026</div>
+  <h1>LightOn — 1ère start-up IA générative européenne cotée<br>IA souveraine · Paradigm · Forge · Résultats annuels complets demain</h1>
+  <div class="hero-meta">
+    <span>📅 24 mars 2026 — Clôture · cours 5,14 €</span>
+    <span>💶 Capi ~33 M€ · IPO 10,35 € nov. 2024 (-50%)</span>
+    <span>🏢 Paris · Co-CEOs Igor Carron &amp; Laurent Daudet</span>
+    <span>⚠️ NPC — pas un conseil en investissement</span>
+  </div>
+</div>
+
+<!-- ALERT RÉSULTATS DEMAIN -->
+<div class="alert ao">
+  <div class="at">🔔 RÉSULTATS ANNUELS COMPLETS 2025 — DEMAIN 31 MARS 2026 · après clôture · Catalyseur immédiat</div>
+  <p><strong>Les résultats annuels complets 2025 de LightOn sont publiés DEMAIN 31 mars 2026 après clôture de la bourse.</strong> Seul le CA a été communiqué en février (1,7 M€, +54%). Demain : résultat net, trésorerie actualisée, ARR détaillé, guidance 2026. <strong>Ce sera le premier test grandeur nature de la trajectoire vers la profitabilité guidée pour fin 2026.</strong> La trésorerie (8,8 M€ au S1 2025, burn rate ~1,5 M€/semestre) sera scrutée à la loupe.</p>
+</div>
+
+<!-- ALERT POSITIF -->
+<div class="alert ag">
+  <div class="at">✅ Points positifs — CA +54%, NVIDIA validé, Linkup, LightOnOCR-2, GTC NVIDIA 2026</div>
+  <p><strong>CA 2025 : 1,7 M€ (+54%)</strong>, tiré par les ventes de licences Paradigm qui triplent à 1,611 M€. Partenariat stratégique avec <strong>Linkup</strong> (mars 2026) pour enrichir Paradigm d'un accès web temps réel — chaîne 100% européenne. Validation de Paradigm sur <strong>NVIDIA RTX PRO 6000 Blackwell</strong> (nov. 2025) — seuls 2 GPU pour faire tourner la plateforme complète. Lancement de <strong>LightOnOCR-2</strong> (jan. 2026) — IA documentaire état de l'art. Participation au <strong>GTC NVIDIA 2026</strong> (mars 2026). Expansion Moyen-Orient (Arabe natif dans Paradigm). Passage à la profitabilité visé <strong>fin 2026</strong>.</p>
+</div>
+
+<!-- ALERT WARNING ARR -->
+<div class="alert ar">
+  <div class="at">🚨 Warning ARR décembre 2025 — ARR 1,9 M€ vs objectif initial 6 M€ · Déception majeure</div>
+  <p><strong>Le 15 décembre 2025, LightOn a publié un profit warning sur son ARR 2025</strong> — anticipé à ~2 M€ au lieu de l'objectif initial de 6 M€ annoncé à l'IPO. Raison : cycles de vente longs, appels d'offres complexes, retards d'approvisionnement GPU chez les clients. L'ARR publié fin 2025 est de <strong>1,9 M€</strong>. Pour rappel, lors de l'IPO à 10,35 € en novembre 2024, LightOn avait fixé un objectif d'ARR de <strong>6 M€ pour 2025</strong> — c'est la raison principale du -50% sur le cours depuis l'introduction. <strong>99,7% du CA est réalisé en France</strong> — concentration géographique extrême.</p>
+</div>
+
+<!-- KPIs -->
+<div class="slbl">Chiffres clés — 24 mars 2026</div>
+<div class="kg">
+  <div class="kpi"><div class="kl">Cours clôture</div><div class="kv">5,14 €</div><div class="kd red">-50,3% depuis IPO</div><div class="ks">IPO nov. 2024 à 10,35 €</div></div>
+  <div class="kpi"><div class="kl">Capitalisation</div><div class="kv">~33 M€</div><div class="kd warn">micro-cap</div><div class="ks">~6,4 M actions · Euronext Growth</div></div>
+  <div class="kpi"><div class="kl">RSI (4h)</div><div class="kv">40,21</div><div class="kd bl">Neutre bas</div><div class="ks">MACD -0,144 · légèrement négatif</div></div>
+  <div class="kpi"><div class="kl">CA 2025</div><div class="kv">1,7 M€</div><div class="kd up">+54% vs 2024</div><div class="ks">Licences Paradigm ×3</div></div>
+  <div class="kpi"><div class="kl">ARR fin 2025</div><div class="kv">1,9 M€</div><div class="kd red">vs objectif 6 M€</div><div class="ks">Warning déc. 2025 · -68%</div></div>
+  <div class="kpi"><div class="kl">Trésorerie S1-2025</div><div class="kv">8,8 M€</div><div class="kd warn">burn ~1,5 M€/sem.</div><div class="ks">11,9 M€ fin 2024 · à actualiser</div></div>
+  <div class="kpi"><div class="kl">Résultats annuels</div><div class="kv">31 mars</div><div class="kd o">DEMAIN ⚡</div><div class="ks">Complets · tréso + RN + ARR</div></div>
+  <div class="kpi"><div class="kl">Consensus objectif</div><div class="kv">5,71 €</div><div class="kd up">+11%</div><div class="ks">Capture Boursorama · 1 analyste</div></div>
+  <div class="kpi"><div class="kl">Profitabilité guidée</div><div class="kv">Fin 2026</div><div class="kd p">objectif mgmt.</div><div class="ks">Ambitieux au vu du CA actuel</div></div>
+  <div class="kpi"><div class="kl">Géographie CA</div><div class="kv">99,7%</div><div class="kd red">France seule</div><div class="ks">Risque de concentration extrême</div></div>
+</div>
+
+<!-- PRÉSENTATION -->
+<div class="gap"></div>
+<div class="slbl">Présentation — LightOn & l'IA souveraine</div>
+<div class="card">
+  <h3><span class="ic">🧠</span> La 1ère start-up IA générative européenne cotée — Paradigm + Forge · LLM souverains on-premise</h3>
+  <p>LightOn (fondée en 2016 à Paris, par Igor Carron et Laurent Daudet — chercheurs ayant officié des deux côtés de l'Atlantique) est spécialisée dans l'IA générative souveraine pour les entreprises et le secteur public. Après avoir exploré les OPU (processeurs optiques), la société a pivoté en 2020 vers l'IA générative. Elle a développé <strong>12 LLM</strong>, dont AlfredV3. Cotée sur Euronext Growth en novembre 2024, elle est la <strong>première start-up européenne d'IA générative à être cotée en bourse</strong>.</p>
+  <table class="dt">
+    <tr><th>Produit</th><th>Description</th><th>Stade commercial</th><th>CA 2025</th></tr>
+    <tr><td>Paradigm</td><td style="color:#6872a8">Plateforme IA générative on-premise/souveraine clé en main — agents IA, RAG, recherche documentaire, accès web Linkup</td><td class="g">Commercial · croissance ×3</td><td class="g">~1,611 M€ (licences)</td></tr>
+    <tr><td>Forge</td><td style="color:#6872a8">Accompagnement technologique LLM sur mesure pour clients grands comptes — développement/fine-tuning modèles propres</td><td class="b">Services actifs</td><td class="b">~0,116 M€ (services)</td></tr>
+    <tr><td>LightOnOCR-2</td><td style="color:#6872a8">IA documentaire — extraction/structuration de documents complexes, état de l'art mondial selon LightOn</td><td class="o">Lancé jan. 2026 · intégré Paradigm</td><td style="color:#6872a8">Inclus dans licences</td></tr>
+  </table>
+  <p style="margin-top:10px"><strong>Clients &amp; secteurs :</strong> Safran, défense nationale, secteur public français, banque, hautes technologies. <strong>Atout différenciant :</strong> déploiement on-premise sur infrastructure propre du client (souveraineté des données), sans dépendance au cloud américain — argument décisif pour la défense et les organismes publics français dans le contexte géopolitique actuel.</p>
+</div>
+
+<!-- PARTENARIATS -->
+<div class="card">
+  <h3><span class="ic">🤝</span> Pipeline de partenariats — Chaîne européenne maîtrisée</h3>
+  <table class="dt">
+    <tr><th>Partenaire</th><th>Date</th><th>Nature</th><th>Impact business</th></tr>
+    <tr><td>Oreus</td><td class="t">Nov. 2025</td><td style="color:#6872a8">Distribution souveraine — contrat pluriannuel · Oreus = 1er opérateur IA souverain FR</td><td class="g">Canal de distribution → revenus récurrents</td></tr>
+    <tr><td>Linkup</td><td class="t">12/03/2026</td><td style="color:#6872a8">Accès web temps réel dans Paradigm via API Linkup · 100% européen</td><td class="b">Enrichissement fonctionnel Paradigm</td></tr>
+    <tr><td>NVIDIA (Blackwell)</td><td class="t">Nov. 2025</td><td style="color:#6872a8">Validation Paradigm sur RTX PRO 6000 Blackwell — 2 GPU suffisent · démocratisation PME</td><td class="g">Abaisse la barrière entrée GPU</td></tr>
+    <tr><td>GTC NVIDIA 2026</td><td class="t">Mars 2026</td><td style="color:#6872a8">Participation San Jose — visibilité internationale</td><td class="b">Pipeline commercial international</td></tr>
+  </table>
+</div>
+
+<!-- CHRONOLOGIE -->
+<div class="gap"></div>
+<div class="slbl">Chronologie — IPO à aujourd'hui</div>
+<div class="card">
+  <h3><span class="ic">📅</span> 16 mois d'existence cotée — entre promesses et ajustements</h3>
+  <div class="tl">
+    <div class="tli">
+      <div class="tld g"></div>
+      <div class="tldate">NOV. 2024 ✅</div>
+      <div class="tllbl">IPO Euronext Growth · Prix 10,35 € · Capi ~62 M€ · 1ère IA générative cotée Europe <span class="tag tg">INTRODUCTION</span></div>
+      <div class="tldesc">LightOn devient la première start-up européenne d'IA générative cotée. Objectif d'ARR 6 M€ annoncé pour 2025. Levée de fonds destinée à accélérer le déploiement commercial de Paradigm et étendre la présence internationale.</div>
+    </div>
+    <div class="tli">
+      <div class="tld b"></div>
+      <div class="tldate">NOV. 2025 ✅</div>
+      <div class="tllbl">Validation Paradigm sur NVIDIA RTX PRO 6000 Blackwell · Partenariat Oreus <span class="tag tb">TECH + DISTRIB.</span></div>
+      <div class="tldesc">Double actualité positive : (1) Paradigm fonctionne sur 2 GPU Blackwell uniquement → abaisse drastiquement la barrière d'entrée pour les PME. (2) Contrat pluriannuel avec Oreus pour distribution sur plateforme souveraine française.</div>
+    </div>
+    <div class="tli">
+      <div class="tld r"></div>
+      <div class="tldate">15 DÉC. 2025 ⚠️</div>
+      <div class="tllbl">Warning ARR — 2 M€ attendus vs 6 M€ objectif IPO · Titre -6% <span class="tag tr">DÉCEPTION MAJEURE</span></div>
+      <div class="tldesc">LightOn annonce ne pas pouvoir tenir l'objectif d'ARR 2025 à 6 M€. L'ARR est ajusté à ~2 M€. Explication : cycles de vente plus longs que prévu (appels d'offres complexes), retards GPU chez certains clients. Le titre corrige. C'est la raison principale du -50% depuis l'IPO.</div>
+    </div>
+    <div class="tli">
+      <div class="tld b"></div>
+      <div class="tldate">19 JAN. 2026 ✅</div>
+      <div class="tllbl">Lancement LightOnOCR-2 — IA documentaire "état de l'art mondial" <span class="tag tb">PRODUIT</span></div>
+      <div class="tldesc">LightOn intègre dans Paradigm sa technologie LightOnOCR-2, capable de révéler et structurer l'information dans des documents complexes. Positionnée comme la meilleure performance mondiale sur les benchmarks. Renforce l'offre pour les secteurs très documentés (juridique, finance, administration).</div>
+    </div>
+    <div class="tli">
+      <div class="tld g"></div>
+      <div class="tldate">04 FÉV. 2026 ✅</div>
+      <div class="tllbl">CA annuel 2025 : 1,7 M€ (+54%) · ARR fin 2025 : 1,9 M€ <span class="tag tg">CA ANNUEL</span></div>
+      <div class="tldesc">CA 2025 en hausse de 54% à 1,7 M€, porté par les licences Paradigm (1,611 M€, ×3 vs 2024). ARR final confirme le warning à 1,9 M€. La société anticipe un passage à la profitabilité en fin 2026 et envisage une croissance en 2026. Résultats complets attendus le 31 mars 2026.</div>
+    </div>
+    <div class="tli">
+      <div class="tld b"></div>
+      <div class="tldate">12 MARS 2026 ✅</div>
+      <div class="tllbl">Partenariat Linkup — accès web temps réel dans Paradigm · 100% européen <span class="tag tb">PARTENARIAT</span></div>
+      <div class="tldesc">LightOn intègre Linkup dans Paradigm — la plateforme peut désormais combiner analyse de documents internes + recherche web structurée en temps réel. Chaîne technologique 100% européenne. Conforme RGPD et normes souveraines.</div>
+    </div>
+    <div class="tli">
+      <div class="tld b"></div>
+      <div class="tldate">14-19 MARS 2026 ✅</div>
+      <div class="tllbl">GTC NVIDIA 2026 · San Jose · Présence et visibilité internationale <span class="tag tb">VISIBILITÉ</span></div>
+      <div class="tldesc">LightOn participe à l'un des principaux événements mondiaux de l'IA et du calcul accéléré. Opportunité de pipeline commercial international, notamment pour l'expansion Moyen-Orient (Arabie Saoudite, EAU — Paradigm désormais natif arabe).</div>
+    </div>
+    <div class="tli">
+      <div class="tld r"></div>
+      <div class="tldate">31 MARS 2026 — DEMAIN ⚡</div>
+      <div class="tllbl">Résultats annuels complets 2025 · Trésorerie · Guidance 2026 <span class="tag to">CATALYSEUR IMMÉDIAT</span></div>
+      <div class="tldesc">Publication des résultats annuels complets après clôture. Ce qui sera scruté : (1) trésorerie actualisée et runway 2026, (2) ARR Q4 2025 détaillé et trajectoire Q1 2026, (3) guidance officielle 2026 et feuille de route profitabilité, (4) annonces de nouveaux contrats éventuelles. <strong>Publication la plus importante depuis l'IPO.</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- TECHNIQUE -->
+<div class="gap"></div>
+<div class="slbl">Analyse technique — Graphique 4h au 24/03/2026</div>
+<div class="card">
+  <h3><span class="ic">📈</span> Cours 5,14 € · RSI 40,21 · MACD -0,144 · Consolidation zone 5,00-5,50 €</h3>
+  <p>Le graphique 4h (jan-mars 2026) montre le titre en longue consolidation entre 5,00 et 6,50 €, avec un range principal 5,00-6,00 € ces dernières semaines. Le cours est descendu sous les moyennes mobiles clés et se retrouve dans la partie basse du range. RSI 40 = neutre-bas, sans signal de survente extrême mais sans momentum. MACD légèrement négatif (-0,144).</p>
+
+  <div style="background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.2);border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:#fed7aa">
+    📐 <strong style="color:#ffedd5">Niveaux lus sur graphique 4h ProRealTime</strong> · Support vert fort visible à ~5,00 € · Résistances horizontales multiples au-dessus
+  </div>
+  <div style="margin:14px 0">
+    <div class="frow"><div class="flvl">Support S2</div><div class="fprice" style="color:#4a5a6a">~4,75 €</div><div class="fbar"><div class="fbar-fill" style="width:8%;background:#4a5a6a"></div></div><span class="ftag"><span class="tag" style="background:rgba(74,90,106,.2);color:#8a9aac">S2</span></span></div>
+    <div class="frow"><div class="flvl">Support S1 vert</div><div class="fprice" style="color:var(--green)">~5,00 €</div><div class="fbar"><div class="fbar-fill" style="width:20%;background:var(--green)"></div></div><span class="ftag"><span class="tag tg">Support fort vert</span></span></div>
+    <div class="frow" style="background:rgba(251,146,60,.04);border-radius:6px;padding:7px 4px"><div class="flvl" style="color:var(--orange)">COURS</div><div class="fprice" style="color:var(--orange)">5,14 €</div><div class="fbar"><div class="fbar-fill" style="width:27%;background:var(--orange)"></div></div><span class="ftag"><span class="tag to">au-dessus S1</span></span></div>
+    <div class="frow"><div class="flvl">Résist. R1</div><div class="fprice" style="color:var(--blue)">5,38 €</div><div class="fbar"><div class="fbar-fill" style="width:37%;background:var(--blue)"></div></div><span class="ftag"><span class="tag tb">R1 proche</span></span></div>
+    <div class="frow"><div class="flvl">Résist. R2</div><div class="fprice" style="color:var(--warn)">5,51-5,71 €</div><div class="fbar"><div class="fbar-fill" style="width:50%;background:var(--warn)"></div></div><span class="ftag"><span class="tag tw">R2 · obj. consensus</span></span></div>
+    <div class="frow"><div class="flvl">Résist. R3</div><div class="fprice" style="color:var(--orange)">5,93 €</div><div class="fbar"><div class="fbar-fill" style="width:68%;background:var(--orange)"></div></div><span class="ftag"><span class="tag to">R3</span></span></div>
+    <div class="frow"><div class="flvl">Range haut</div><div class="fprice" style="color:var(--danger)">~7,30 €</div><div class="fbar"><div class="fbar-fill" style="width:100%;background:var(--danger)"></div></div><span class="ftag"><span class="tag tr">pic récent</span></span></div>
+  </div>
+
+  <div style="background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.25);border-radius:8px;padding:13px 16px;margin:12px 0">
+    <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--warn);margin-bottom:8px">⚖️ RSI 40 · MACD -0,14 · Cours sur support 5,00-5,14 € · Résultats annuels DEMAIN = déclencheur</div>
+    <p style="color:#fde68a;margin-bottom:6px;font-size:13.5px">Le cours est au-dessus du support vert à 5,00 € mais sans momentum haussier. La configuration technique est <strong style="color:#fefce8">attentiste</strong> — le marché attend visiblement les résultats annuels de demain pour prendre une direction.</p>
+    <p style="color:#fde68a;margin-bottom:0;font-size:13.5px"><strong style="color:#fefce8">Scénario haussier (résultats demain positifs) :</strong> tréso rassurante + guidance 2026 solide → franchissement 5,38 € puis 5,71 €. <strong style="color:#fefce8">Scénario baissier :</strong> tréso sous 5 M€ ou pas de guidance ou nouveau warning ARR → rupture 5,00 € → 4,75 €. <strong style="color:#fefce8">Le support à 5,00 € est la ligne de défense absolue à court terme.</strong></p>
+  </div>
+</div>
+
+<!-- CT MT LT -->
+<div class="gap"></div>
+<div class="slbl">Perspectives CT / MT / LT</div>
+<div class="pg">
+  <div class="pc">
+    <div class="hz" style="color:var(--warn)">🕐 CT · 0-3 mois</div>
+    <h4>Catalyseurs</h4>
+    <ul>
+      <li>Résultats annuels 31 mars (demain !)</li>
+      <li>Trésorerie et runway actualisés</li>
+      <li>Guidance ARR 2026 officielle</li>
+      <li>Annonces de nouveaux contrats</li>
+      <li>Support 5,00 € à tenir</li>
+    </ul>
+    <h4 style="margin-top:10px;color:var(--danger)">Risques CT</h4>
+    <ul>
+      <li>Tréso sous 5 M€ → dilution AK</li>
+      <li>Nouveau warning ARR / guidance floue</li>
+      <li>Rupture 5,00 € → 4,75 €</li>
+    </ul>
+  </div>
+  <div class="pc">
+    <div class="hz" style="color:var(--green)">📅 MT · 3-12 mois</div>
+    <h4>Moteurs de re-rating</h4>
+    <ul>
+      <li>Contrats défense / secteur public > 1 M€</li>
+      <li>ARR franchi 4-5 M€ fin 2026</li>
+      <li>Expansion Moyen-Orient (EAU/KSA)</li>
+      <li>Résultats S1 2026 (28 juillet)</li>
+      <li>Profitabilité EBITDA atteinte</li>
+    </ul>
+    <h4 style="margin-top:10px;color:var(--danger)">Risques MT</h4>
+    <ul>
+      <li>Concentration 99,7% France</li>
+      <li>Burn rate > capacité tréso</li>
+      <li>Compétition OpenAI, Mistral, Anthropic</li>
+    </ul>
+  </div>
+  <div class="pc">
+    <div class="hz" style="color:var(--purple)">🔭 LT · 12 mois+</div>
+    <h4>Thèse haussière</h4>
+    <ul>
+      <li>IA souveraine = marché structurel en Europe</li>
+      <li>Paradigm → standard administrations FR/EU</li>
+      <li>Expansion géographique Moyen-Orient + UE</li>
+      <li>Partenaire privilégié défense nationale</li>
+      <li>Cible d'acquisition (Thales, Cap Gemini, Atos)</li>
+    </ul>
+    <h4 style="margin-top:10px;color:var(--danger)">Risques LT</h4>
+    <ul>
+      <li>Mistral AI (non coté) reste concurrent</li>
+      <li>Big tech US proposent "cloud souverain"</li>
+      <li>Dépendance NVIDIA (GPU)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- VERDICT -->
+<div class="gap"></div>
+<div class="slbl">Mon avis personnel</div>
+<div class="verdict">
+  <div class="vt">💬 Verdict — Un récit puissant, des fondamentaux fragiles, un catalyseur pour demain</div>
+  <p>LightOn occupe une position stratégique rare : <strong>première IA générative européenne cotée</strong>, positionnée sur le créneau porteur de la souveraineté numérique (défense, secteur public, données sensibles), avec une technologie réelle et validée par NVIDIA. Le narratif est puissant et le contexte géopolitique européen lui est favorable.</p>
+  <p>Mais la réalité financière est une micro-cap avec 1,7 M€ de CA et un ARR de 1,9 M€ fin 2025 — très en deçà des 6 M€ promis à l'IPO. <strong>Le marché a sanctionné cette déception (-50% depuis l'introduction).</strong> La thèse de profitabilité fin 2026 suppose soit des contrats majeurs signés rapidement, soit un ralentissement très significatif du burn.</p>
+  <ul class="ul" style="margin:8px 0">
+    <li><span class="hlo">Résultats DEMAIN</span> = première fenêtre de vérité. La trésorerie actualisée et la guidance 2026 seront le signal directionnel à court terme. C'est un vrai événement binaire à 24 heures.</li>
+    <li class="neu"><span class="hlb">Positionnement IA souveraine</span> = argument structurel solide en 2026. La dépendance aux GAFAM est un sujet politique en Europe et la demande pour des solutions souveraines est réelle — OTAN, Ministère des Armées, grandes banques françaises.</li>
+    <li><span class="hlr">Concentration à 99,7% France</span> = risque de concentration majeur pour une valeur cotée. L'expansion Moyen-Orient est stratégique mais encore à confirmer en revenus.</li>
+    <li class="risk"><span class="hlr">Profitabilité fin 2026 avec 1,9 M€ d'ARR</span> = exige soit un décollage commercial très rapide (contrats > 1 M€), soit une réduction de coûts drastique. Le personnel représentait déjà 3 M€ au S1 2025 — les coûts sont bien supérieurs aux revenus.</li>
+  </ul>
+  <div class="conclu">
+    🎯 <strong>Micro-cap IA souveraine très spéculative — dossier à haute conviction narrative mais fondamentaux encore fragiles.</strong> <span style="color:var(--warn);font-weight:600">Support clé : 5,00 € (ligne verte). Si rupture : 4,75 €. Résistances : 5,38 € → 5,71 € (objectif analyste) → 5,93 €. Catalyseur DEMAIN 31 mars : résultats annuels — trésorerie + guidance 2026 = déclencheur directionnel. RSI 40 neutre : marge à la hausse si bonnes nouvelles. Position réservée aux investisseurs tolérant une volatilité élevée (88%) et un risque de perte totale.</span>
+  </div>
+</div>
+
+<div style="margin-top:20px;padding:12px;background:var(--surface);border-radius:8px;font-size:11.5px;color:#7c85b0;text-align:center;border:1px solid var(--border)">
+  Sources : Communiqués LightOn (2025-2026), Boursorama, Zonebourse, Idéal Investisseur, WebDisclosure, Le Conseil Patrimoine · CA 2025 publié 04/02/2026 · Résultats annuels 2025 attendus le 31/03/2026 · Analyse personnelle non professionnelle · Ne constitue pas un conseil en investissement · DYOR
+</div>
+
+</div>
+</body>
+</html>
